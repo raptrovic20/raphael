@@ -1,0 +1,11 @@
+global:
+
+  env:
+
+  - LARAVEL_ENV: production
+
+  before_deploy:
+
+  - "php artisan migrate:install"
+
+  - "php artisan migrate"
