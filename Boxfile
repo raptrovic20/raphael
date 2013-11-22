@@ -19,7 +19,7 @@ web1:
     - memcached
     - curl
   before_deploy:
-	- "composer install"
+	- "if [ ! -f composer.phar ]; then curl -s http://getcomposer.org/installer | php; fi; php composer.phar install"
     - "php artisan migrate:install"
     - "php artisan migrate"
   after_deploy:
